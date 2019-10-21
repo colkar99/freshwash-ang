@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" routerLink="/">Freshwash</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarsExampleDefault">
+        <ul class="navbar-nav" *ngIf="!loggedIn">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/sign-up">Signup <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mt-2 mt-md-0" *ngIf="loggedIn">
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">My Account</a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
