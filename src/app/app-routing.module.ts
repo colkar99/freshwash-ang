@@ -10,6 +10,8 @@ import { YearlySubscriptionComponent } from './order/yearly-subscription/yearly-
 import { MyOrdersComponent } from './order/my-orders/my-orders.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { UserComponent } from './admin/components/user/user.component';
+import { ManageUserComponent } from './admin/components/user/manage-user/manage-user.component';
+import { OrderComponent } from './admin/components/order/order.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
 {path: 'yearly-subscription', component: YearlySubscriptionComponent},
 {path: 'my-orders', component: MyOrdersComponent},
 {path: 'admin/home', component: AdminHomeComponent, pathMatch:'prefix', children:[
-  {path: 'users', component: UserComponent}
+  {path: 'users', component: UserComponent},
+  {path: 'orders', component: OrderComponent},
+  {path: 'manage-users', component: ManageUserComponent}
 ]},
 ];
 

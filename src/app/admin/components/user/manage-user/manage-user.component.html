@@ -1,0 +1,166 @@
+<div class="container">
+    <div class="row">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="view" id="edit" value="view" [checked]="viewMode"
+                (click)="changeMode()">
+            <label class="form-check-label" for="view">
+                View mode
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="edit" id="edit" value="edit" [checked]="!viewMode"
+                (click)="changeMode()">
+            <label class="form-check-label" for="edit">
+                Edit Mode
+            </label>
+        </div>
+    </div>
+    <form>
+        <div class="row">
+            <div class="form-group col-12">
+                <label for="name">Membership Type</label>
+                <select class="form-control" [disabled]="viewMode">
+                    <option>One Time Wash</option>
+                    <option>Monthly Subscription</option>
+                    <option>Yearly Susbscription</option>
+                </select>
+            </div>
+            <div class="form-group col-6">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name" placeholder="Enter name" [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"
+                    [disabled]="viewMode">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group col-6">
+                <label for="MobileNo">Mobile No</label>
+                <input type="text" class="form-control" id="MobileNo" placeholder="Enter email" [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                    [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Password" [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="role">Role</label>
+                <select class="form-control" id="role" [disabled]="viewMode">
+                    <option>SuperAdmin</option>
+                    <option>Admin</option>
+                    <option>Staff</option>
+                    <option>Washmens</option>
+                </select>
+            </div>
+        </div>
+        <h4>Address details</h4>
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="addLine1">Address line 1</label>
+                <input type="text" class="form-control" id="addLine1" placeholder="Enter your Address" [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="addLine2">Address line 2</label>
+                <input type="text" class="form-control" id="addLine2" placeholder="Enter your Address" [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="Enter your city" [disabled]="viewMode">
+            </div>
+            <div class="form-group col-6">
+                <label for="landMark">Landmark</label>
+                <input type="text" class="form-control" id="landMark" placeholder="Enter your near by landmark"
+                    [disabled]="viewMode">
+            </div>
+            <div class="form-group col-4">
+                <label for="state">District</label>
+                <select class="form-control" [disabled]="viewMode">
+                    <option>Trichy</option>
+                </select>
+            </div>
+            <div class="form-group col-4">
+                <label for="state">State</label>
+                <select class="form-control" [disabled]="viewMode">
+                    <option>Tamilnadu</option>
+                </select>
+            </div>
+            <div class="form-group col-4">
+                <label for="state">Country</label>
+                <select class="form-control" [disabled]="viewMode">
+                    <option>India</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Order details</h2>
+    <div class="row">
+        <div class="col-6">Filter by dropdown</div>
+        <div class="col-6">Filter by text box</div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Assigned to</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>
+                            <select>
+                                <option>Karthik</option>
+                                <option>senthil</option>
+                                <option>Jyothi</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a routerLink="/admin/home/manage-users" [queryParams]="{view:'true'}">View</a> |
+                            <a routerLink="/admin/home/manage-users" [queryParams]="{view:'false'}">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>
+                            <a href="#">View</a> |
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>
+                            <a href="#">View</a> |
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,8 @@ import { BookingModelComponent } from './shared/components/booking-model/booking
 import { MyOrdersComponent } from './order/my-orders/my-orders.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { UserComponent } from './admin/components/user/user.component';
+import { ManageUserComponent } from './admin/components/user/manage-user/manage-user.component';
+import { OrderComponent } from './admin/components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +34,10 @@ import { UserComponent } from './admin/components/user/user.component';
     BookingModelComponent,
     MyOrdersComponent,
     AdminHomeComponent,
-    UserComponent
-  ],
+    UserComponent,
+    ManageUserComponent,
+    OrderComponent
+    ],
   imports: [
     BrowserModule,
     FormsModule,
