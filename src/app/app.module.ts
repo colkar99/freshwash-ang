@@ -15,6 +15,8 @@ import { MonthlySubscriptionComponent } from './order/monthly-subscription/month
 import { YearlySubscriptionComponent } from './order/yearly-subscription/yearly-subscription.component';
 import { BookingModelComponent } from './shared/components/booking-model/booking-model.component';
 import { MyOrdersComponent } from './order/my-orders/my-orders.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { UserComponent } from './admin/components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MyOrdersComponent } from './order/my-orders/my-orders.component';
     MonthlySubscriptionComponent,
     YearlySubscriptionComponent,
     BookingModelComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    AdminHomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

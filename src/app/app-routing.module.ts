@@ -8,6 +8,8 @@ import { MonthlySubscriptionComponent } from './order/monthly-subscription/month
 import { OneTimeWashComponent } from './order/one-time-wash/one-time-wash.component';
 import { YearlySubscriptionComponent } from './order/yearly-subscription/yearly-subscription.component';
 import { MyOrdersComponent } from './order/my-orders/my-orders.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { UserComponent } from './admin/components/user/user.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,9 @@ const routes: Routes = [
 {path: 'monthly-subscription', component: MonthlySubscriptionComponent},
 {path: 'yearly-subscription', component: YearlySubscriptionComponent},
 {path: 'my-orders', component: MyOrdersComponent},
+{path: 'admin/home', component: AdminHomeComponent, pathMatch:'prefix', children:[
+  {path: 'users', component: UserComponent}
+]},
 ];
 
 @NgModule({
