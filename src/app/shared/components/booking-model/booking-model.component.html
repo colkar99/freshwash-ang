@@ -1,0 +1,73 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{categoryName}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div>
+        <form #f="ngForm" (ngSubmit)="submitForm(f)">
+            <div class="col">
+                <div class=" form-group">
+                    <label>Select Brand</label>
+                    <select #carBrand="ngModel" [ngModel]="order.brand" name="brand" class="form-control">
+                        <option value="Maruthi">Maruthi suzuki</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Dutsun">Dutsun</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Select Model</label>
+                    <select #carModel="ngModel" name="model" [ngModel]="order.model" class="form-control">
+                        <option>Maruthi suzuki</option>
+                        <option>Nissan</option>
+                        <option>Dutsun</option>
+                    </select>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Choose your date</label>
+                    <input #date="ngModel" [ngModel]="order.date" type="date" name="date" class="form-control">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Choose your time in 24 hours</label>
+                    <input #time="ngModel" [ngModel]="order.time" name="time" type="time" class="form-control">
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col ">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input #name="ngModel" [ngModel]="order.name" name="fullName" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Mobile No</label>
+                    <input #mobileNo="ngModel" [ngModel]="order.mobileNo" name="mobileNo" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input #email="ngModel" [ngModel]="order.email" name="email" type="email" class="form-control">
+                </div>
+            </div>
+            <div class="col-6 form-group">
+                <label>Wash Type you choosed</label>
+                <input type="hidden" #category="ngModel" name="category" [ngModel]="order.category" [value]="categoryName" >
+                <h5>{{categoryName }}</h5>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-warning btn-block"> Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

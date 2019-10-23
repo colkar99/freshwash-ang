@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,12 @@ import { HomeComponent } from './core/home/home.component';
 import { SignUpComponent } from './core/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './core/navbar/navbar.component';
+import { UserHomeComponent } from './order/user-home/user-home.component';
+import { OneTimeWashComponent } from './order/one-time-wash/one-time-wash.component';
+import { MonthlySubscriptionComponent } from './order/monthly-subscription/monthly-subscription.component';
+import { YearlySubscriptionComponent } from './order/yearly-subscription/yearly-subscription.component';
+import { BookingModelComponent } from './shared/components/booking-model/booking-model.component';
+import { MyOrdersComponent } from './order/my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +22,21 @@ import { NavbarComponent } from './core/navbar/navbar.component';
     LoginComponent,
     HomeComponent,
     SignUpComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserHomeComponent,
+    OneTimeWashComponent,
+    MonthlySubscriptionComponent,
+    YearlySubscriptionComponent,
+    BookingModelComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgbModule
   ],
+  entryComponents:[BookingModelComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
